@@ -12,15 +12,18 @@ public class Human {
 	private Long id;
 	private String firstName;
 	private String lastName;
+	private Boolean god;
 	
 	public Human() {
 		this.firstName="";
 		this.lastName="";
+		this.god=false;
 	}
 	
-	public Human(String firstName,String lastName) {
+	public Human(String firstName,String lastName,Boolean god) {
 		this.firstName=firstName;
 		this.lastName=lastName;
+		this.god=god;
 	}
 
 	public String getFirstName() {
@@ -38,10 +41,19 @@ public class Human {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+		
 	
+	public Boolean getGod() {
+		return god;
+	}
+
+	public void setGod(Boolean god) {
+		this.god = god;
+	}
+
 	@Override
 	public String toString() {
-		return this.id.toString() + " " + this.firstName + " " + this.lastName;
+		return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString();
 	}
 	
 	

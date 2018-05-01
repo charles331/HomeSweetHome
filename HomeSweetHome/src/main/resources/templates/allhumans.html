@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
-	
+
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-<h1>List of all humans saved :</h1>
-<table th:object="${humans}" id="humansTable" border="1">
-    <tr th:each="human :${humans}">
-        <td  th:text="${human.getFirstName()}"></td>
-        <td  th:text="${human.getLastName()}"></td>
-    </tr>
-</table>
+	<h1>List of all humans saved :</h1>
+	<table th:object="${humans}" id="humansTable" border="1">
+		<tr >
+			<td>FirstName</td>
+			<td>LastName</td>
+			<td>God</td>
+		</tr>
+		<tr th:each="human :${humans}">
+			<td th:text="${human.getFirstName()}"></td>
+			<td th:text="${human.getLastName()}"></td>
+			<td th:text="${human.getGod()}"></td>
+		</tr>
+	</table>
 
 </body>
 </html>
