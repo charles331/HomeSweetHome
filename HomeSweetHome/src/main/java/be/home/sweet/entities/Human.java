@@ -14,7 +14,8 @@ public class Human {
 	private String lastName;
 	
 	public Human() {
-		
+		this.firstName="";
+		this.lastName="";
 	}
 	
 	public Human(String firstName,String lastName) {
@@ -38,6 +39,10 @@ public class Human {
 		this.lastName = lastName;
 	}
 	
+	@Override
+	public String toString() {
+		return this.id.toString() + " " + this.firstName + " " + this.lastName;
+	}
 	
 	
 }
