@@ -5,17 +5,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Human page</h1>
-<form th:action="@{/}" th:object="${human}" method="post">
-		
+	<h1>Human page</h1>
+	<form th:action="@{/}" th:object="${human}" method="post">
+
 		<div>
-			<p>Human firstName : <input type="text" th:field="*{firstName}" /></p>
-			<p>Human lastName  : <input type="text" th:field="*{lastName}" /></p>
+			<p>
+				Human firstName : <input type="text" th:field="*{firstName}" />
+			</p>
+			<p>
+				Human lastName : <input type="text" th:field="*{lastName}" />
+			</p>
 		</div>
 		<div>
-			<input type="submit" value="Add human" />
-			<input type="reset" value="Reset" />
+			<input type="submit" value="Add human" /> <input type="reset"
+				value="Reset" />
 		</div>
 	</form>
+	
 </body>
 </html>
