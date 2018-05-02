@@ -14,16 +14,15 @@ public class Human {
 	private String lastName;
 	private Boolean god;
 	
-	public Human() {
-		this.firstName="";
-		this.lastName="";
-		this.god=false;
-	}
 	
 	public Human(String firstName,String lastName,Boolean god) {
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.god=god;
+	}
+
+	public Human() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getFirstName() {
