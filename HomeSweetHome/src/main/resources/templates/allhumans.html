@@ -14,12 +14,14 @@
 			<td>LastName</td>
 			<td>God</td>
 			<td>Gender</td>
+			<td>ToString</td>
 		</tr>
 		<tr th:each="human :${humans}">
 			<td th:text="${human.getFirstName()}"></td>
 			<td th:text="${human.getLastName()}"></td>
 			<td th:text="${human.getGod()}"></td>
 			<td th:text="${human.getGender()}"></td>
+			<td th:text="${human.toString()}"></td>
 		</tr>
 	</table>
 
