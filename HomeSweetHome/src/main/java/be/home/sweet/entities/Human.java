@@ -3,6 +3,8 @@ package be.home.sweet.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Human {
@@ -10,6 +12,8 @@ public class Human {
 	@Id
 	@GeneratedValue()
 	private Long id;
+	@NotBlank
+	@Size(min=3, max=10)
 	private String firstName;
 	private String lastName;
 	private Boolean god;
@@ -22,9 +26,16 @@ public class Human {
 		this.god=god;
 		this.gender=gender;
 	}
+	public Human(String firstName) {
+		this.firstName=firstName;
+		this.lastName="";
+		this.god=false;
+		this.gender="";		
+	}
 
 	public Human() {
 		// TODO Auto-generated constructor stub
+
 	}
 
 	public String getFirstName() {
@@ -62,7 +73,8 @@ public class Human {
 
 	@Override
 	public String toString() {
-		return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString() + " " + this.gender;
+		//return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString() + " " + this.gender;
+		return this.id.toString() + " " + this.firstName ;
 	}
 	
 	
