@@ -1,5 +1,8 @@
 package be.home.sweet.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,19 +29,22 @@ public class Human {
 	private Boolean god;
 	@NotBlank
 	private String gender;
+	@NotBlank
+	private String profile;
 	
 	
-	public Human(String firstName,String lastName,Boolean god,String gender) {
+	public Human(String firstName,String lastName,Boolean god,String gender,String profile) {
 		this.firstName=firstName;
 		this.lastName=lastName;
 		this.god=god;
 		this.gender=gender;
+		this.profile=profile;
 	}
 
 
 	public Human() {
 		// TODO Auto-generated constructor stub
-
+		this.gender="Male";
 	}
 
 	public String getFirstName() {
@@ -74,10 +80,27 @@ public class Human {
 		this.gender = gender;
 	}
 
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
 	@Override
 	public String toString() {
 		return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString() + " " + this.gender;
 		//return this.id.toString() + " " + this.firstName ;
+	}
+	
+	public static List<String> getProfiles() {
+	    List<String> list = new ArrayList<>();
+	    list.add("");
+	    list.add("Developer");
+	    list.add("Manager");
+	    list.add("Director");
+	    return list;
 	}
 	
 	

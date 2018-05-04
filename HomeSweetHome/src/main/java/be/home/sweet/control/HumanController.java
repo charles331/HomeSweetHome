@@ -35,6 +35,7 @@ public class HumanController {
 		mav.setViewName("human-create");
 		System.out.println("Create empty human");
 		mav.addObject("human", new Human());
+		mav.addObject("humanProfiles", Human.getProfiles());
 		return mav;
 	}
 	
@@ -45,6 +46,7 @@ public class HumanController {
 			System.out.println("Validation human error " + result.toString());
 			mav.setViewName("human-create");
 			mav.addObject("human", human);
+			mav.addObject("humanProfiles", Human.getProfiles());
 			return mav;			
 		}
 		System.out.println("save human " + human.getFirstName());

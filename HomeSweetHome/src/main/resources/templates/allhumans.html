@@ -14,6 +14,7 @@
 			<td>LastName</td>
 			<td>God</td>
 			<td>Gender</td>
+			<td>Profile</td>
 			<td>ToString</td>
 		</tr>
 		<tr th:each="human :${humans}">
@@ -21,9 +22,10 @@
 			<td th:text="${human.getLastName()}"></td>
 			<td th:text="${human.getGod()}"></td>
 			<td th:text="${human.getGender()}"></td>
+			<td th:text="${human.getProfile()}"></td>
 			<td th:text="${human.toString()}"></td>
 		</tr>
 	</table>
-
+	<a href="#" th:href="@{/app/human-create}" th:text="#{app.view.human-create}">Add Human</a>
 </body>
 </html>

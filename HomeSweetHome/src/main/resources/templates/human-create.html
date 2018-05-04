@@ -32,6 +32,12 @@
 				</td>
 				<td><label th:if="${#fields.hasErrors('gender')}" th:text="#{error.human.gender}"	th:class="'error'">God Error</label></td>
 			</tr>
+			<tr><td th:text="#{human.profile}" /></td>
+				<td><select th:field="*{profile}">
+	    	          <option th:each="profile : ${humanProfiles}" th:value="${profile}" th:text="${profile}">Profile</option>
+	    	       </select></td>
+				<td><label th:if="${#fields.hasErrors('profile')}" th:errors="*{profile}"	th:class="'error'">Profile Error</label></td>
+			</tr>
 			
 			<tr><td colspan="2">
 	              <input type="submit" th:value="#{human.form.submit}"/> 
