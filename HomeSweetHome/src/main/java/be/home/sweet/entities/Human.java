@@ -15,8 +15,16 @@ public class Human {
 	@NotBlank
 	@Size(min=3, max=10)
 	private String firstName;
+	//<label th:if="${#fields.hasErrors('firstName')}" th:text="#{error.human.firstName}" th:class="'error'">Id Error</label> 
+	//#{error.human.firstName}
+	
+	//<label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:class="'error'">Id Error</label> 
+	//*{firstName}
+	@NotBlank
+	@Size(min=3, max=10)
 	private String lastName;
 	private Boolean god;
+	@NotBlank
 	private String gender;
 	
 	
@@ -26,12 +34,7 @@ public class Human {
 		this.god=god;
 		this.gender=gender;
 	}
-	public Human(String firstName) {
-		this.firstName=firstName;
-		this.lastName="";
-		this.god=false;
-		this.gender="";		
-	}
+
 
 	public Human() {
 		// TODO Auto-generated constructor stub
@@ -73,8 +76,8 @@ public class Human {
 
 	@Override
 	public String toString() {
-		//return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString() + " " + this.gender;
-		return this.id.toString() + " " + this.firstName ;
+		return this.id.toString() + " " + this.firstName + " " + this.lastName + " isGod=" + this.god.toString() + " " + this.gender;
+		//return this.id.toString() + " " + this.firstName ;
 	}
 	
 	

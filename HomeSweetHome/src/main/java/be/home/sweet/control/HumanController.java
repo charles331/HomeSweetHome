@@ -42,7 +42,7 @@ public class HumanController {
 	public ModelAndView createHuman(@Valid Human human,  BindingResult result) {
 		ModelAndView mav = new ModelAndView();
 		if(result.hasErrors()) {
-			System.out.println("Validation human error");
+			System.out.println("Validation human error " + result.toString());
 			mav.setViewName("human-create");
 			mav.addObject("human", human);
 			return mav;			

@@ -11,12 +11,27 @@
 		<table>
 			<tr><td th:text="#{human.firstName}" /></td>
 				<td>
-					<input type="text" th:field="*{firstName}" />			
-					<label th:if="${#fields.hasErrors('firstName')}" th:text="#{error.human.firstName}"	th:class="'error'">First name Error</label>
+					<input type="text" th:field="*{firstName}" />								
+				</td>
+				<td>
+					<label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"	th:class="'error'">First name Error</label>
 				</td>
 			</tr>
-			
-			
+			<tr><td th:text="#{human.lastName}" /></td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+				<td><label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"	th:class="'error'">Last name Error</label></td>
+			</tr>			
+			<tr><td th:text="#{human.god}" /></td>
+				<td><input type="checkbox" th:field="*{god}" /></td>
+				<td><label th:if="${#fields.hasErrors('god')}" th:errors="*{god}"	th:class="'error'">God Error</label></td>
+			</tr>
+			<tr><td th:text="#{human.gender}" /></td>
+				<td>				
+				Male<input type="radio" th:field="*{gender}" value="Male"/>
+				Female<input type="radio" th:field="*{gender}" value="Female"/>							
+				</td>
+				<td><label th:if="${#fields.hasErrors('gender')}" th:text="#{error.human.gender}"	th:class="'error'">God Error</label></td>
+			</tr>
 			
 			<tr><td colspan="2">
 	              <input type="submit" th:value="#{human.form.submit}"/> 
