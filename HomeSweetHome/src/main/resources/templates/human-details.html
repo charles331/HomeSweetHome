@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<form action="#" th:action="@{/app/human-details}" th:object="${human}" method="POST">
+		<table>
+			<tr><td th:text="#{human.firstName}" /></td>
+				<td>
+					<input type="text" th:field="*{firstName}" />								
+				</td>
+				<td>
+					<label th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"	th:class="'error'">First name Error</label>
+				</td>
+			</tr>
+			<tr><td th:text="#{human.lastName}" /></td>
+				<td><input type="text" th:field="*{lastName}" /></td>
+				<td><label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"	th:class="'error'">Last name Error</label></td>
+			</tr>			
+			<tr><td th:text="#{human.god}" /></td>
+				<td><input type="checkbox" th:field="*{god}" /></td>
+				<td><label th:if="${#fields.hasErrors('god')}" th:errors="*{god}"	th:class="'error'">God Error</label></td>
+			</tr>
+			<tr><td th:text="#{human.gender}" /></td>
+				<td>				
+				Male<input type="radio" th:field="*{gender}" value="Male"/>
+				Female<input type="radio" th:field="*{gender}" value="Female"/>							
+				</td>
+				<td><label th:if="${#fields.hasErrors('gender')}" th:text="#{error.human.gender}"	th:class="'error'">God Error</label></td>
+			</tr>
+			<tr><td th:text="#{human.profile}" /></td>
+				<td><select th:field="*{profile}">
+	    	          <option th:each="profile : ${humanProfiles}" th:value="${profile}" th:text="${profile}">Profile</option>
+	    	       </select></td>
+				<td><label th:if="${#fields.hasErrors('profile')}" th:errors="*{profile}"	th:class="'error'">Profile Error</label></td>
+			</tr>
+			
+			
+        </table>
+	</form>
+</body>
+</html>
